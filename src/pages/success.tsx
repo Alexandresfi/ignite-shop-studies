@@ -1,3 +1,19 @@
-export default function() {
-  return <h1>Success</h1>
+import Link from "next/link";
+import { ImageContainer, SuccessContainer } from "../styles/pages/success";
+
+export default function Success() {
+  return (
+    <SuccessContainer>
+      <h1>Compra Efetuada!</h1>
+      <ImageContainer>
+      </ImageContainer>
+      <p>
+        Uhuul <strong>Diego Fernandes</strong>, sua <strong>Camiseta Beyond the Limits</strong> já está a caminha da sua casa.
+      </p>
+
+      <Link href='/' >
+          Voltar ao catálogo
+      </Link>
+    </SuccessContainer>
+  )
 }
