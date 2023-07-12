@@ -9,6 +9,7 @@ import { stripe } from "../lib/stripe";
 
 import Stripe from "stripe";
 import Link from "next/link";
+import Head from "next/head";
 
 interface HomeProps {
   products: {
@@ -28,6 +29,10 @@ export default function Home( {products}: HomeProps ) {
   })
 
   return (
+    <>
+    <Head>
+      <title>Home | Ignite Shop</title>
+    </Head>
     <HomeContainer ref={sliderRef} className="keen-slider" >
       {products.map(product => {
         return(
@@ -52,6 +57,7 @@ export default function Home( {products}: HomeProps ) {
       })}
 
     </HomeContainer>
+    </>
   )
 }
 

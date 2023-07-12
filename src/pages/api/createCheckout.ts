@@ -13,7 +13,7 @@ import { stripe } from "../../lib/stripe"
     return res.status(400).json({error: 'Price not Found'})
   }
 
-  const successUrl = `${process.env.NEXT_URL}/sucess`;
+  const successUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`;
   const cancelUrl = `${process.env.NEXT_URL}/`;
 
   const checkoutSession = await stripe.checkout.sessions.create({
